@@ -9,7 +9,7 @@ prefix="http://img.youtube.com/vi/"
 suffix="/maxresdefault.jpg"
  
 # Parameters setting
-id=`echo ${1} | grep -oP "(?<=\=)(.+)"` # target id
+id=`echo ${1} | rev | cut -c 1-11 | rev`
 url=$prefix$id$suffix # thumbnail url
 vid_sec=60 # output video duration in sec
 fadetime="3" # fade out duration in sec
